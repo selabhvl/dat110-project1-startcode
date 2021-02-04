@@ -206,3 +206,5 @@ You can run the individual devices and the controller in separate JVMs by starti
 Each group must hand in a link on Canvas to a git-repository containing their implementation and a screen-shot showing the result of running all the unit-tests.
 
 Please remember to hand-in as a member of a group in Canvas: https://hvl365-my.sharepoint.com/:w:/g/personal/akv_hvl_no/EdkQXNKVjmhPrHNtD3n5r74B6KSb7DwmVYf9MA3SIUA4Sw?e=hC5Q9i
+#   d a t 1 0 0 m e d N i c o  
+ 
