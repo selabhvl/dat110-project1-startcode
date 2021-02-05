@@ -4,44 +4,63 @@ import java.util.Arrays;
 
 import no.hvl.dat110.TODO;
 
-public class Message {
+public class Message
+{
+    public static int SIZE = 128;
 
-	private byte[] payload;
+    private byte[] payload;
 
-	public Message(byte[] payload) {
-		this.payload = payload; // TODO: check for length within boundary
-	}
+    public Message(byte[] payload) throws ArrayIndexOutOfBoundsException
+    {
+        this.payload = payload;
+        // DONE: check for length within boundary
+        if (payload.length > SIZE - 1)
+        {
+            throw new ArrayIndexOutOfBoundsException("Payload cannot exceed " + (SIZE - 1) + " bytes.");
+        }
+    }
 
-	public Message() {
-		super();
-	}
+    public Message()
+    {
+        super();
+    }
 
-	public byte[] getData() {
-		return this.payload; 
-	}
+    public byte[] getData()
+    {
+        return this.payload;
+    }
 
-	public byte[] encapsulate() {
-		
-		byte[] encoded = null;
-		
-		// TODO
-		// encapulate/encode the payload of this message in the
-		// encoded byte array according to message format
-		
-		if (true)
-		   throw new UnsupportedOperationException(TODO.method());
+    public byte[] encapsulate()
+    {
+        byte[] encoded = new byte[SIZE];
 
-		return encoded;
-		
-	}
+        // DONE
+        // encapulate/encode the payload of this message in the
+        // encoded byte array according to message format
 
-	public void decapsulate(byte[] received) {
+        encoded[0] = (byte) payload.length;
 
-		// TODO
-		// decapsulate the data contained in the received byte array and store it 
-		// in the payload of this message
-		
-		throw new UnsupportedOperationException(TODO.method());
-		
-	}
+        for (int i = 0; i < payload.length; i++)
+        {
+            encoded[i + 1] = payload[i];
+        }
+
+        return encoded;
+    }
+
+    public void decapsulate(byte[] received)
+    {
+        // DONE
+        // decapsulate the data contained in the received byte array and store it
+        // in the payload of this message
+
+        int length = received[0];
+
+        payload = new byte[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            payload[i] = received[i + 1];
+        }
+    }
 }
