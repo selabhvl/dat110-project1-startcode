@@ -26,12 +26,20 @@ public class MessagingServer
     }
 
     // accept an incoming connection from a client
-    public Connection accept() throws IOException
+    public Connection accept()
     {
         // DONE
         // accept TCP connection on welcome socket and create messaging connection
 
-        Connection connection = new Connection(welcomeSocket.accept());
+        Connection connection = null;
+        try
+        {
+            connection = new Connection(welcomeSocket.accept());
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
 
         return connection;
     }

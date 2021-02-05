@@ -35,17 +35,24 @@ public class Connection
         }
     }
 
-    public void send(Message message) throws IOException
+    public void send(Message message)
     {
         // DONE
         // encapsulate the data contained in the message and write to the output stream
         // Hint: use the encapsulate method on the message
 
-        outStream.write(message.encapsulate());
-        outStream.flush();
+        try
+        {
+            outStream.write(message.encapsulate());
+            outStream.flush();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
-    public Message receive() throws IOException
+    public Message receive()
     {
         // DONE
         // read a segment (128 bytes) from the input stream and decapsulate into message
@@ -54,12 +61,21 @@ public class Connection
         Message message = new Message();
         byte[] recvbuf = new byte[Message.SIZE];
 
-        for (int i = 0; i < Message.SIZE; i++)
+        try
         {
-            recvbuf[i] = inStream.readByte();
+            for (int i = 0; i < Message.SIZE; i++)
+            {
+                recvbuf[i] = inStream.readByte();
+            }
+
+            message.decapsulate(recvbuf);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
         }
 
-        message.decapsulate(recvbuf);
+
 
         return message;
     }

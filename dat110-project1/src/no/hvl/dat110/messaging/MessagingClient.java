@@ -19,13 +19,21 @@ public class MessagingClient
     }
 
     // connect to messaging server
-    public Connection connect() throws IOException // #NotMyProblem
+    public Connection connect()
     {
         // DONE
         // create TCP socket for client and connection
         // create connection object
 
-        Socket clientSocket= new Socket(server, port);
+        Socket clientSocket= null;
+        try
+        {
+            clientSocket = new Socket(server, port);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
         Connection connection = new Connection(clientSocket);
 
         return connection;
