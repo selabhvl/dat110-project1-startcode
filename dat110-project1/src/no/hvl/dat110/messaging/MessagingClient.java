@@ -3,9 +3,6 @@ package no.hvl.dat110.messaging;
 import java.io.IOException;
 
 import java.net.Socket;
-import java.net.UnknownHostException;
-
-import no.hvl.dat110.TODO;
 
 public class MessagingClient {
 
@@ -38,10 +35,6 @@ public class MessagingClient {
 		}
 		
 		//=================================================================
-		
-//		if (true) {
-//			throw new UnsupportedOperationException(TODO.method());
-//		}
 
 		return connection;
 	}
