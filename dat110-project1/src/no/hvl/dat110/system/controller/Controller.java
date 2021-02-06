@@ -28,9 +28,22 @@ public class Controller  {
 		// create local display and sensor objects
 		// register display and sensor objects in the RPC layer
 		
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
-		}
+		//=================================================================
+		
+		displayclient.connect();
+		sensorclient.connect();
+		
+		display = new Display();
+		sensor = new Sensor();
+		
+		displayclient.register(display);
+		sensorclient.register(sensor);
+		
+		//=================================================================
+		
+//		if (true) {
+//			throw new UnsupportedOperationException(TODO.method());
+//		}
 		
 		// register stop methods in the RPC layer
 		displayclient.register(stopdisplay);
@@ -38,6 +51,14 @@ public class Controller  {
 		
 		// TODO:
 		// loop while reading from sensor and write to display via RPC
+		
+		//=================================================================
+		
+		for (int i=0; i<N; i++) {
+			display.write(String.format("DISPLAY: %d\n", sensor.read()));
+		}
+		
+		//=================================================================
 		
 		if (true) {
 			throw new UnsupportedOperationException(TODO.method());
