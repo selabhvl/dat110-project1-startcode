@@ -9,7 +9,7 @@ public class Display extends RPCStub {
 
 	public void write(String message) {
 
-		// TODO
+		// COMPLETED
 		// implement marshalling, call and unmarshalling for write RPC method
 		
 		//=================================================================
@@ -19,7 +19,5 @@ public class Display extends RPCStub {
 		RPCUtils.unmarshallVoid(response);
 		
 		//=================================================================
-
-//		throw new UnsupportedOperationException(TODO.method());
 	}
 }
