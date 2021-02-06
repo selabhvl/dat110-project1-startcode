@@ -20,6 +20,6 @@ public class Display extends RPCStub {
 		
 		//=================================================================
 
-		throw new UnsupportedOperationException(TODO.method());
+//		throw new UnsupportedOperationException(TODO.method());
 	}
 }
