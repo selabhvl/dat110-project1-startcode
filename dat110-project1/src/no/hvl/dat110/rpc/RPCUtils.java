@@ -15,7 +15,7 @@ public class RPCUtils {
 
 		byte[] encoded;
 
-		// TODO: marshall RPC identifier and string into byte array
+		// COMPLETED: marshall RPC identifier and string into byte array
 		
 		//=================================================================
 		
@@ -26,10 +26,6 @@ public class RPCUtils {
 		
 		//=================================================================
 
-//		if (true) {
-//			throw new UnsupportedOperationException(TODO.method());
-//		}
-
 		return encoded;
 	}
 
@@ -37,7 +33,7 @@ public class RPCUtils {
 
 		String decoded;
 
-		// TODO: unmarshall String contained in data into decoded
+		// COMPLETED: unmarshall String contained in data into decoded
 		
 		//=================================================================
 		
@@ -46,10 +42,6 @@ public class RPCUtils {
 		
 		//=================================================================		
 
-//		if (true) {
-//			throw new UnsupportedOperationException(TODO.method());
-//		}
-
 		return decoded;
 	}
 
@@ -57,7 +49,7 @@ public class RPCUtils {
 
 		byte[] encoded;
 
-		// TODO: marshall RPC identifier in case of void type
+		// COMPLETED: marshall RPC identifier in case of void type
 		
 		//=================================================================
 		
@@ -65,10 +57,6 @@ public class RPCUtils {
 		encoded[0] = rpcid;
 		
 		//=================================================================
-
-//		if (true) {
-//			throw new UnsupportedOperationException(TODO.method());
-//		}
 
 		return encoded;
 
@@ -104,7 +92,7 @@ public class RPCUtils {
 
 		byte[] encoded;
 
-		// TODO: marshall RPC identifier and string into byte array
+		// COMPLETED: marshall RPC identifier and string into byte array
 		
 		//=================================================================
 		
@@ -114,10 +102,6 @@ public class RPCUtils {
 		System.arraycopy(data, 0, encoded, 1, data.length);
 		
 		//=================================================================
-
-//		if (true) {
-//			throw new UnsupportedOperationException(TODO.method());
-//		}
 
 		return encoded;
 	}
@@ -152,7 +136,7 @@ public class RPCUtils {
 
 		int decoded;
 
-		// TODO: unmarshall integer contained in data
+		// COMPLETED: unmarshall integer contained in data
 		
 		//=================================================================
 		
@@ -160,10 +144,6 @@ public class RPCUtils {
 		decoded = byteArrayToInteger(temp);
 		
 		//=================================================================
-
-//		if (true) {
-//			throw new UnsupportedOperationException(TODO.method());
-//		}
 
 		return decoded;
 
